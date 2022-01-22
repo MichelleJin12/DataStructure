@@ -2,6 +2,8 @@
 # define DATA_STRUCTURE_H
 # include <stdio.h>
 # include <stdlib.h>
+# include "arraylist.h"
+# include "linkedlist.h"
 
 typedef struct node1 {
 	int data;

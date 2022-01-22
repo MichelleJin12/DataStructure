@@ -49,6 +49,8 @@ int isArrayListFull(ArrayList* pList)
 
 int addALElement(ArrayList* pList, int position, ArrayListNode element)
 {
+	if (position < 0)
+		return (FALSE);
 	if (position < pList->maxElementCount && !isArrayListFull(pList))
 	{
 		for (int i = pList->currentElementCount; i > position; i--)
@@ -65,6 +67,8 @@ int addALElement(ArrayList* pList, int position, ArrayListNode element)
 
 int removeALElement(ArrayList* pList, int position)
 {
+	if (position < 0)
+		return (FALSE);
 	if (position < pList->maxElementCount)
 	{
 		for (int i = position; i < pList->currentElementCount - 1; i++)
@@ -80,9 +84,11 @@ int removeALElement(ArrayList* pList, int position)
 
 ArrayListNode* getALElement(ArrayList* pList, int position)
 {
+	if (position < 0)
+		return (NULL);
 	if (position < pList->maxElementCount)
 		return &(pList->pElement[position]);
-	return NULL;
+	return (NULL);
 }
 
 /*

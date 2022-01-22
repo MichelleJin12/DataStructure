@@ -30,6 +30,9 @@ int addLLElement(LinkedList* pList, int position, ListNode element)
 	ListNode *ptr;
 	ListNode *tmp;
 
+	if (position < 0)
+		return (FALSE);
+
 	new_elem = (ListNode *)malloc(sizeof(ListNode) * 1);
 	if (!new_elem)
 		return (FALSE);
@@ -74,6 +77,9 @@ int removeLLElement(LinkedList* pList, int position)
 	ListNode *ptr;
 	ListNode *tmp;
 
+	if (position < 0)
+		return (FALSE);
+
 	ptr = pList->headerNode.pLink;
 
 	if (position < pList->currentElementCount)
@@ -113,6 +119,9 @@ int removeLLElement(LinkedList* pList, int position)
 ListNode* getLLElement(LinkedList* pList, int position)
 {
 	ListNode *ptr;
+
+	if (position < 0)
+		return (NULL);
 
 	ptr = pList->headerNode.pLink;
 	if (position < pList->currentElementCount)

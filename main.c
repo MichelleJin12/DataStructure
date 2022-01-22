@@ -49,6 +49,8 @@ int main(int argc, char *argv[])
 			}
 			deleteArrayList(arr);
 			deleteLinkedList(lst);
+			arr = NULL;
+			lst = NULL;
 			break;
 
 		default:

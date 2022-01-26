@@ -22,7 +22,10 @@ ArrayList* createArrayList(int maxElementCount)
 	arr->maxElementCount = maxElementCount;
 	arr->pElement = (ArrayListNode *)malloc(sizeof(ArrayListNode) * maxElementCount);
 	if (!arr->pElement)
+	{
+		free(arr);
 		return (NULL);
+	}
 	return (arr);
 }
 
@@ -108,9 +111,8 @@ pList 원소 초기화
 */
 void clearArrayList(ArrayList* pList)
 {
-	for (int i = 0; i < pList->maxElementCount; i++)
-		pList->pElement[i].data = 0;
 	pList->currentElementCount = 0;
+	free(pList->pElement);
 }
 
 int getArrayListLength(ArrayList* pList)

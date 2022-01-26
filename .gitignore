@@ -50,3 +50,10 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+
+# custom
+.vscode
+자료구조 학습자료
+data_structure
+자료구조 학습자료.zip

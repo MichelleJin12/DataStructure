@@ -4,6 +4,7 @@
 # include <stdlib.h>
 # include "arraylist.h"
 # include "linkedlist.h"
+# include "doublylist.h"
 
 typedef struct node1 {
 	int data;
@@ -15,7 +16,5 @@ typedef struct node2 {
 	struct node* prev;
 	struct node* next;
 } doubleNode;
-
-
 
 #endif

@@ -21,6 +21,8 @@ LinkedList* createLinkedList()
 	lst = (LinkedList *)malloc(sizeof(LinkedList) * 1);
 	if (!lst)
 		return (NULL);
+	lst->currentElementCount = 0;
+	lst->headerNode.pLink = 0;
 	return lst;
 }
 
@@ -69,6 +71,7 @@ int addLLElement(LinkedList* pList, int position, ListNode element)
 		pList->currentElementCount++;
 		return TRUE;
 	}
+	free(new_elem);
 	return FALSE;
 }
 
@@ -77,7 +80,7 @@ int removeLLElement(LinkedList* pList, int position)
 	ListNode *ptr;
 	ListNode *tmp;
 
-	if (position < 0)
+	if (position < 0 || pList->currentElementCount == 0)
 		return (FALSE);
 
 	ptr = pList->headerNode.pLink;
@@ -136,11 +139,16 @@ ListNode* getLLElement(LinkedList* pList, int position)
 void clearLinkedList(LinkedList* pList)
 {
 	ListNode *ptr;
+	ListNode *tmp;
 
 	ptr = pList->headerNode.pLink;
-	for (int i = 0; i < pList->currentElementCount; i++)
-		ptr->data = 0;
-	ptr->pLink = NULL;
+	while (ptr != NULL)
+	{
+		tmp = ptr->pLink;
+		free(ptr);
+		ptr = tmp;
+	}
+	pList->headerNode.pLink = NULL;
 }
 
 int getLinkedListLength(LinkedList* pList)

@@ -6,6 +6,7 @@ int main(int argc, char *argv[])
 	int number;
 	ArrayList* arr;
 	LinkedList* lst;
+	DoublyList* dlst;
 
 	if (argc == 2)
 	{
@@ -52,14 +53,42 @@ int main(int argc, char *argv[])
 			arr = NULL;
 			lst = NULL;
 			break;
-
-		default:
-			break;
+		case 2:
 			// 2.circular_linked_list
-
+			printf("##############Circular linked list####################\n");
+			lst = createCircularLinkedList();
+			for (int i = 1; i <= 10; i++)
+			{
+				ListNode node;
+				node.data = i;
+				addCLLElement(lst, 0, node);
+			}
+			displayCircularLinkedList(lst);
+			for (int i = 9; i >= 0; i--)
+			{
+				printf("[drop: %d], [list leng: %d]\n", getCLLElement(lst, i)->data, getCircularLinkedListLength(lst));
+				removeCLLElement(lst, i);
+				displayCircularLinkedList(lst);
+			}
+			deleteCircularLinkedList(lst);
 
 			// 2. double_linked_list
-
+			printf("##############Doubly linked list####################\n");
+			dlst = createDoublyList();
+			for (int i = 1; i <= 10; i++)
+			{
+				DoublyListNode node;
+				node.data = i;
+				addDLElement(dlst, 0, node);
+			}
+			displayDoublyList(dlst);
+			for (int i = 9; i >= 0; i--)
+			{
+				printf("[drop: %d], [list leng: %d]\n", getDLElement(dlst, i)->data, getDoublyListLength(dlst));
+				removeDLElement(dlst, i);
+				displayDoublyList(dlst);
+			}
+			deleteDoublyList(dlst);
 
 			// 2. polynomial_addition
 

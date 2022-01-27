@@ -5,16 +5,21 @@
 # include "arraylist.h"
 # include "linkedlist.h"
 # include "doublylist.h"
+# include "polylist.h"
 
-typedef struct node1 {
-	int data;
-	struct node* next;
-} simpleNode;
+/*
+circular linked list
+*/
+LinkedList* createCircularLinkedList();
+int addCLLElement(LinkedList* pList, int position, ListNode element);
+int removeCLLElement(LinkedList* pList, int position);
+ListNode* getCLLElement(LinkedList* pList, int position);
+void clearCircularLinkedList(LinkedList* pList);
+int getCircularLinkedListLength(LinkedList* pList);
+void deleteCircularLinkedList(LinkedList* pList);
+void displayCircularLinkedList(LinkedList* pList);
 
-typedef struct node2 {
-	int data;
-	struct node* prev;
-	struct node* next;
-} doubleNode;
+
+
 
 #endif

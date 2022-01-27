@@ -2,12 +2,12 @@
 
 ## curriculum
 # Day1
-- array
-- linked list
+- array ✅
+- linked list ✅
 
 # Day2
-- circular linked list
-- double linked list
+- circular linked list ✅
+- double linked list ✅
 - polynomial addtion
 - reverse linked list
 

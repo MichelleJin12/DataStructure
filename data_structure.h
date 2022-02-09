@@ -6,6 +6,7 @@
 # include "linkedlist.h"
 # include "doublylist.h"
 # include "polylist.h"
+# include "arraystack.h"
 
 /*
 circular linked list

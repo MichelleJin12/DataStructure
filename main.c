@@ -7,6 +7,7 @@ int main(int argc, char *argv[])
 	ArrayList* arr;
 	LinkedList* lst;
 	DoublyList* dlst;
+	ArrayStack* arrStack;
 
 	if (argc == 2)
 	{
@@ -94,14 +95,31 @@ int main(int argc, char *argv[])
 
 
 			// 2. reverse_linked_list
-
-
+			break ;
+		case 3:
 			// 3. stack array
+			printf("##############Array Stack####################\n");
+			arrStack = createArrayStack(10);
+			for (int i = 1; i <= 10; i++)
+			{
+				ArrayStackNode node;
+				node.data = i;
+				pushAS(arrStack, node);
+			}
+			displayArrayStack(arrStack);
+			for (int i = 0; i < 10; i++)
+			{
+				printf("POP: ");
+				popAS(arrStack);
+				displayArrayStack(arrStack);
+			}
+			deleteArrayStack(arrStack);
 
 
 			// 3. stack_linked_list
 
 
+			break ;
 			// 4. maze
 
 

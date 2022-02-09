@@ -1,5 +1,6 @@
 /*
 
+ stack linked list.c
 
 */
 

@@ -3,7 +3,7 @@
 
 typedef struct LinkedStackNodetype {
 	char data;
-	struct LinkedStackNodetype *pLink;		//링크
+	struct LinkedStackNodetype *pLink;		// 링크
 }	LinkedStackNode;
 
 typedef struct LinkedStacktype {

@@ -12,7 +12,7 @@
 - reverse linked list
 
 # Day3
-- stack array
+- stack array ✅
 - stack linked list
 
 # Day4
